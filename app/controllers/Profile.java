@@ -30,6 +30,15 @@ public class Profile extends Controller
     index();
   }
   
+  public static void changeStatusHome(String statusText)
+  {
+    User user = Accounts.getLoggedInUser();
+    user.statusText = statusText;
+    user.save();
+    Logger.info("Status changed to " + statusText);
+    Home.index();
+  }
+  
   public static void getPicture(Long id) 
   {
     User user = User.findById(id);
@@ -48,6 +57,15 @@ public class Profile extends Controller
     user.save();
     Logger.info("saving picture");
     index();
+  } 
+  
+  public static void uploadPictureHome(Long id, Blob picture)
+  {
+    User user = User.findById(id);
+    user.profilePicture = picture;
+    user.save();
+    Logger.info("saving picture");
+    Home.index();
   }  
   
   public static void getThumbnail(Long id) 

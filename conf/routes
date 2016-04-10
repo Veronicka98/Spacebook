@@ -24,7 +24,9 @@ GET     /members/follow/{id}                    Members.follow
 # Profile page
 GET     /profile                                Profile.index
 POST    /profile/changestatus                   Profile.changeStatus
+POST    /profile/changestatusHome               Profile.changeStatusHome
 POST    /profile/uploadpicture/{id}             Profile.uploadPicture
+POST    /profile/uploadpictureHome/{id}         Profile.uploadPictureHome
 GET     /profile/getpicture/{id}                Profile.getPicture
 POST    /profile/uploadthumbnail/{id}           Profile.uploadThumbnail
 GET     /profile/getthumbnail/{id}              Profile.getThumbnail
