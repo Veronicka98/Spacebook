@@ -1,12 +1,29 @@
-<section class="ui raised segment">
-  <div class="ui list"> 
-    #{list items:users, as:'user'}
-      <div class="ui item"> 
-        <i class="user icon"></i>
-        <div class="content">
-          ${user.firstName} ${user.lastName}: : ${user.statusText}  <a href="members/follow/${user.id}"> (follow) </a> 
+<div class="ui header">Spacebook's Members</div>
+    <div class="ui center aligned middle aligned padded grid">
+      <div class="row top">
+        <div class="five wide column">
+          NAME
+        </div>
+        <div class="five wide column">
+          STATUS
+        </div>
+        <div class="five wide column">
+          FOLLOW
         </div>
       </div>
-    #{/list}
+    #{list items:users, as:'user'}
+        <div class="row">
+        <div class="five wide column">
+          ${user.firstName} ${user.lastName}
+        </div>
+        <div class="five wide column">
+          ${user.statusText}
+        </div>
+        <div class="five wide column">
+          <a href="/members/follow/${user.id}"><i class="plus square outline icon"></i></a>
+        </div>
+        </div>
+        
+    #{/list} 
+  
   </div>
-</section>

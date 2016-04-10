@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+a {
+	color: black;
+}
+
+.background {
+	  height: 100%;
+	  background: url("http://www.magic4walls.com/wp-content/uploads/2014/10/solar-system-Mars-Pluto-abstract-planet-right-on-earth-desktop.jpg");
+      background-size: cover;
+      background-position:center;
+      font-family: 'Raleway', sans-serif;
+      color:white;
+}
+
+
+div.welcome {
+	font-size:40px;
+}
+
+.ui.menu.main a.item {
+    font-size: 17px;
+}
+.ui.secondary.menu > .menu > .item.border,
+.ui.secondary.menu > .item.border {
+	border: solid white 1px;
+}
+.ui.menu .item.size {
+	font-size:12px;
+}
+div.two.wide.column.padding {
+	padding: 5px;
+}
+div.ui.container.border {
+	height:100%;
+	border: solid white 1px;
+}
+div.header.log {
+	color:rgba(255, 255, 255, 0.8);
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border: solid white 1px;
+	margin-bottom: 15px;
+}
+div.row.button {
+	margin-top: 15px;
+}
+section.ui.form.margin {
+	margin-top: 200px;
+}
+div.row.top {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border: solid black 1px;
+	margin-bottom: 15px;
+}

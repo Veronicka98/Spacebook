@@ -1,28 +1,38 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<nav class="ui inverted menu">
-  <header class="header item"> Spacebook </header>
-  <div class="right menu">
-    <a class="active item" href="/home">Home</a></li>
-    <a class="item" href="/members">Members</a>
-    <a class="item" href="/profile">Profile</a>
-    <a class="item" href="/blog">Blog</a>
-    <a class="item" href="/logout">Logout</a>
-  </div>
-</nav> 
+      <div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook : ${user.firstName} ${user.lastName}
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item active border" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a>   
+  			<a class="ui item" href="/blog">Blog</a>
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div>
 
-<h1 class="ui inverted teal block header" >${user.firstName} ${user.lastName}</h1>
-<section class="ui two column grid segment">
-  <div class="row">
-    <div class="ui column">
+  <div class="ui center aligned top aligned padded stackable grid">
+    <div class="row">
+
+	<div class="seven wide column segment">
       #{include "components/friends.html" /} 
     </div>
-    <div class="column">
+    <div class="seven wide column segment">
       #{include "components/messages.html" /} 
     </div>
-  </div>
-</section>
+      #{include "components/footer.html" /} 
+      </div>
+    </div>
+
+
 
 
  

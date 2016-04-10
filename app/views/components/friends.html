@@ -1,12 +1,21 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted red block header">Friends (${user.friendships.size()})</h4>
-  <div class="ui list"> 
-    #{list items:user.friendships, as:'friendship'}
-      <div class="ui item"> 
-        <i class="user icon"></i>
-        <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName} </a>
-         (<a href="/home/drop/${friendship.targetUser.id}"> drop </a>)
-      </div>
-    #{/list}
-  </div> 
-</section>  
+<div class="ui header">My friends (${user.friendships.size()})</div>
+          <div class="ui center aligned middle aligned padded grid">
+           <div class="row top">
+            <div class="five wide column">
+              NAME
+            </div>
+            <div class="five wide column">
+              DROP
+            </div>
+           </div>
+          #{list items:user.friendships, as:'friendship'}
+          <div class="row">
+            <div class="five wide column">
+              <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName}</a>
+            </div>
+            <div class="five wide column">
+              <a href="/home/drop/${friendship.targetUser.id}"><i class="minus square outline icon"></i></a>
+            </div>
+           </div>
+          #{/list}
+        </div>

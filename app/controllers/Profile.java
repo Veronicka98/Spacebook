@@ -12,8 +12,13 @@ public class Profile extends Controller
 {
   public static void index()
   {
-    User user = Accounts.getLoggedInUser();
-    render(user);
+	  String userId = session.get("logged_in_userid");
+	     if (userId != null) {
+	    	User user = User.findById(Long.parseLong(userId));
+	    	render(user);	
+	     } else {
+		   	Accounts.index();
+	     }
   }
   
   public static void changeStatus(String statusText)

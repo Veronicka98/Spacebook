@@ -1,14 +1,19 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted red block header"> Status</h4>
-  <div class="ui message">
-    <p> ${user.statusText} </p>
-  </div>
-   <section class="ui form segment">
-    <form action="/profile/changestatus" method="POST">
-      <div class="field">
-        <textarea name="statusText"></textarea>
-      </div>
-      <button class="ui button teal submit labeled icon"><i class="icon edit"></i> Update </button>
-    </form>
-  </section>
-</section>  
+
+        <div class="ui header">Status</div>
+
+        <div class="row">
+          <div class="ui field segment">
+            <p> ${user.statusText} </p>
+          </div>
+        </div>
+
+        <section class="ui form segment">
+          <form action="/profile/changestatus" method="post">
+            <div class="field">
+              <textarea name="statusText" placeholder="Enter/Change Status"></textarea>
+            </div>
+            <input class="ui blue button" type="submit" name="submit" value="Change" />
+          </form>
+         </section>
+
+     

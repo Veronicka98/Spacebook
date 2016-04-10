@@ -1,20 +1,57 @@
 #{extends 'main.html' /}
 #{set title:'Public Profile Page' /}
 
-<nav class="ui inverted menu">
-  <div class="left menu">
-    <a class="item" href="/home">Home</a></li>
-  </div>
-</nav> 
+<div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook
+			</a>
+		  </div>
+		  <div class="right menu">
+  		     <a class="ui item active border" href="/home">Home</a></li>
+  	   	  </div>
+		</nav> 
+	  </div>    
 
-<h1 class="ui inverted teal block header" >${user.firstName} ${user.lastName}'s Profile</h1>
-<section class="ui  two column grid segment">
-  <div class="row">
-    <div class="column">
-      #{include "components/profilesummary.html" /} 
-    </div>
-    <div class="column">
-      #{include "components/comments.html" /} 
-    </div>
-  </div>
-</section>    
+    <div class="ui center aligned top aligned padded stackable grid">
+    
+      <div class="six wide column">
+        
+          #{include "components/profilesummary.html" /}
+		
+      </div>
+      
+      <div class="seven wide column">
+      	<div class="row">
+         #{include "components/comments.html" /} 
+        </div>
+        
+        <div class="row">
+          <div class="ui header">Send ${user.firstName} a message</div>
+          <form action="/publicprofile/sendmessage/${user.id}" class="ui form" method="post">
+          <div class="field">
+            <textarea name="messageText" placeholder="Message"></textarea>
+          </div>
+          <button  class="ui blue labeled submit icon button">
+            <i class="icon edit"></i> Send
+          </button>
+        </form> 
+        </div>
+        
+        <div class="ui bottom fixed secondary menu" style="background-color:rgba(255, 255, 255, 1);border-top:1px solid grey;">
+  		  <div class="ui center aligned middle aligned padded grid">
+  		    <div class="two wide column padding">
+  		      <a class="item size">Features</a>
+  		    </div>
+  		    <div class="two wide column padding">
+ 		      <a class="item size">Privacy Policy</a>
+ 		    </div>
+ 		    <div class="two wide column padding">
+  		      <a class="item size">Customer Support</a>
+  		    </div>
+  		  </div>
+		</div>
+		
+      </div>

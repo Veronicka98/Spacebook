@@ -1,18 +1,26 @@
 #{extends 'main.html' /}
 #{set title:'Edit Details' /}
 
-<nav class="ui inverted menu">
-  <header class="header item"> Spacebook </header>
-  <div class="right menu">
-    <a class="active item" href="/profile"> Back to Profile  </a>
-  </div>
-</nav> 
+<div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui active item border" href="/profile"> Back to Profile  </a>
+  	   	  </div>
+		</nav> 
+	  </div>
 
-<section class="ui two column middle aligned grid raised form segment">
-  <div class="column">
-    <img src="/public/images/simpsons3.gif" class="ui large image">
-  </div>
-  <div class="column">
+<section class="ui form">
+  <div class="ui center aligned header">Update your profile</div>
+  
+  <div class="ui center aligned top aligned padded stackable grid">
+  <div class="ten wide column">
+  
 	  <form action="/editprofile/change" method="POST">
 	    <div class="two fields">
 	      <div class="field">
@@ -39,10 +47,11 @@
 	    </div>
 	    <div class="field">
 	      <label>Password</label>
-	      <input type="password" name="password">
+	      <input type="password" name="password" value="${user.password}">
 	    </div>
 	    <button class="ui blue submit button">Submit</button>
 	  </form>
-  </div>	  
+	  </div>
+    </div>
 
 </section>

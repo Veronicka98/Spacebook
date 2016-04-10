@@ -11,10 +11,15 @@ public class Members extends Controller
 {
   public static void index()
   {
-    User user = Accounts.getLoggedInUser();
-    List<User> users = User.findAll();
-    users.remove(user);
-    render(users);
+	  List<User> users = User.findAll();
+	    String userId = session.get("logged_in_userid");
+	    if (userId != null) {
+	    	User user = User.findById(Long.parseLong(userId));
+	    	users.remove(user);
+	        render(user, users);
+	    } else {
+	    	Accounts.index();
+	    }
   }
   
   public static void follow(Long id)

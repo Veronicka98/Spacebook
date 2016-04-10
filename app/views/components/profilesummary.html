@@ -1,22 +1,23 @@
-<section>
-	<table class="ui table segment"> 
-	  <thead>
-	    <tr>
-	      <th>Email</th>
-	      <th>Nationality</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>${user.email}</td>
-	      <td>${user.nationality}</td>
-	    </tr>
-	  </tbody>
-	</table>
-	<section class="ui stacked segment">
-	  <div class="ui medium image">
-	    <img src="/profile/getpicture/${user.id}"/> 
-	  </div>  
-	</section>
-</section>
-	
+<div class="row">
+          <div class="ui header">${user.firstName} ${user.lastName}
+            <a href="/members/follow/${user.id}"><i class="plus square outline icon"></i></a>
+          </div>
+        </div>
+        <div class="row">
+			<div class="ui fluid card">
+ 			 <div class="ui fluid image">
+  			  <img src="/profile/getpicture/${user.id}"/>
+  			</div>
+  			<div class="content">
+   			 <div class="description">
+    			  Nationality: ${user.nationality}
+  			  </div>
+ 			 </div>
+ 			 <div class="extra content">
+			    <a>
+ 			     <i class="user icon"></i>
+  			    ${user.friendships.size()} Friends
+  			  </a>
+  			</div>
+		  </div>
+		</div>

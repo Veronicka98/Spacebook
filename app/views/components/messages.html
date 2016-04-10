@@ -1,31 +1,27 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted blue block header">Messages</h4>
-  #{if user.inbox.size() > 0}
-    <table class="ui table segment">
-      <thead>
-        <tr>
-          <th>From</th>
-          <th></th>
-          <th>Message</th>
-        </tr>
-      </thead>
-      <tbody>
-        #{list items:user.inbox, as:'message'}
-          <tr>
-            <td>
-              <div class="ui small image">
-                <img src="/profile/getpicture/${message.from.id}">
-              </div>
-            </td>
-            <td>
-               <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
-             </td>
-             <td> 
+
+<div class="ui header">My messages (${user.inbox.size()})</div>
+         <div class="ui center aligned middle aligned padded grid">
+           <div class="row top">
+            <div class="five wide column">
+              FROM
+            </div>
+            <div class="five wide column">
+              MESSAGE
+            </div>
+           </div>
+           #{if user.inbox.size() > 0}
+          #{list items:user.inbox, as:'message'}
+           <div class="row">
+            <div class="five wide column">
+              <a href="/publicprofile/${message.from.id}">${message.from.firstName}</a>
+            </div>
+            <div class="five wide column">
+                ${message.subject}
+            </div>
+            <div class="five wide column">
                 ${message.messageText}
-              </td>
-          </tr>
-        #{/list}
-      </tbody>
-    </table>  
-  #{/if} 
-</section>
+            </div>
+           </div>
+          #{/list}
+          #{/if} 
+        </div>

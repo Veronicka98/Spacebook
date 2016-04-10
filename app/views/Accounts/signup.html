@@ -1,48 +1,74 @@
 #{extends 'main.html' /}
 #{set title:'Signup for Spacebook' /}
 
-<nav class="ui inverted menu">
-  <header class="header item"> Spacebook </header>
-  <div class="right menu">
-    <a class="active item" href="/signup"> Signup  </a>
-    <a class="item" href="/login">  Login   </a>
-  </div>
-</nav> 
+<div class="background">
 
-<section class="ui two column middle aligned grid raised form segment">
-  <div class="column">
-	  <form action="/register" method="POST">
-	    <div class="two fields">
-	      <div class="field">
-	        <label>First Name</label>
-	        <input placeholder="First Name" type="text" name="firstName">
-	      </div>
-	      <div class="field">
-	        <label>Last Name</label>
-	        <input placeholder="Last Name" type="text" name="lastName">
-	      </div>
-	    </div>
-	    <div class="two fields">
-	      <div class="field">
-	        <label>Nationality</label>
-	        <input placeholder="Nationality" type="text" name="nationality">
-	      </div>
-	      <div class="field">
-	        <label>Age</label>
-	        <input placeholder="Age" type="text" name="age">
-	      </div>
-	    </div>    <div class="field">
-	      <label>Email</label>
-	      <input placeholder="Email" type="text" name="email">
-	    </div>
-	    <div class="field">
-	      <label>Password</label>
-	      <input type="password" name="password">
-	    </div>
-	    <button class="ui blue submit button">Submit</button>
-	  </form>
-	</div>
-	<div class="column">
-    <img src="/public/images/simpsons2.gif" class="ui large image">
-  </div>
-</section>  
+      <div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook 
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="item border" href="/signup"> Signup  </a>
+  			<a class="item border" href="/login">  Login   </a>
+  	   	  </div>
+		</nav> 
+	  </div>
+
+<section class="ui form">
+  <form action="/register" method="POST">
+   <div class="ui center aligned middle aligned padded grid">
+   <div class="six wide column">
+   
+     <div class="row">
+	    <div class="header log">Sign up here:</div>
+	 </div>
+	 
+	 <div class="row">
+    <div class="two fields">
+      <div class="field">
+        <input placeholder="First Name" type="text" name="firstName">
+      </div>
+      <div class="field">
+        <input placeholder="Last Name" type="text" name="lastName">
+      </div>
+    </div> 
+    <div class="two fields">
+      <div class="field">
+        <input placeholder="Age" type="number" name="age">
+      </div>
+      <div class="field">
+        <input placeholder="Nationality" type="text" name="nationality">
+      </div>
+    </div> 
+    <div class="field">
+      <input placeholder="Email" type="text" name="email">
+    </div>
+    <div class="field">
+      <input placeholder="Password" type="password" name="password">
+    </div>
+    <button class="ui blue submit button">Submit</button>
+    </div>
+    </div>
+   </div>
+  </form>
+</section> 
+
+        <div class="ui bottom fixed secondary menu" style="background-color:rgba(255, 255, 255, 0.8);">
+  		  <div class="ui center aligned middle aligned padded grid">
+  		    <div class="two wide column padding">
+  		      <a class="item size">Features</a>
+  		    </div>
+  		    <div class="two wide column padding">
+ 		      <a class="item size">Privacy Policy</a>
+ 		    </div>
+ 		    <div class="two wide column padding">
+  		      <a class="item size">Customer Support</a>
+  		    </div>
+  		  </div>
+		</div>
+
+</div>
