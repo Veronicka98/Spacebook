@@ -22,6 +22,7 @@ public class User extends Model
   public Blob   thumbnailPicture;
   public int    age;
   public String nationality;
+  public boolean logged_in;
 
   @OneToMany(mappedBy = "sourceUser")
   public List<Friendship> friendships = new ArrayList<Friendship>();

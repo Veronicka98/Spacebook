@@ -2,20 +2,28 @@
 <div class="ui header">My messages (${user.inbox.size()})</div>
          <div class="ui center aligned middle aligned padded grid">
            <div class="row top">
+           <div class="one wide column">
+              ON
+            </div>
             <div class="seven wide column">
               FROM
             </div>
-            <div class="nine wide column">
+            <div class="eight wide column">
               MESSAGE
             </div>
            </div>
            #{if user.inbox.size() > 0}
           #{list items:user.inbox, as:'message'}
            <div class="row">
+           <div class="one wide column">
+              #{if message.from.logged_in == true}
+              	<i class="green circle icon"></i>
+              #{/if}
+            </div>
             <div class="seven wide column">
               <a href="/publicprofile/${message.from.id}">${message.from.firstName}</a>
             </div>
-            <div class="nine wide column">
+            <div class="eight wide column">
                 ${message.messageText}
             </div>
            </div>
