@@ -1,9 +1,11 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted blue block header">Published Posts</h4>
+  <div class="ui header">Published Posts</div>
   #{list items:user.posts, as:'post'}
-    <h5 class="ui inverted green block header"> ${post.title}</h5>
-    <p> 
-      ${post.content}:
-    </p>
+    <div class="ui fluid card">
+	  <div class="content">
+	    <div class="header">${post.title}</div>
+	    <div class="description">
+	      ${post.content}
+	    </div>
+	  </div>
+	</div>
   #{/list}
-</section>

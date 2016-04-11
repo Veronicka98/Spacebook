@@ -143,39 +143,3 @@ Friendship(friend10):
     sourceUser: lisa
     targetUser: maggie
     
-User(homer):
-    firstName: Homer
-    lastName: Simpson
-    age: 39
-    nationality: American
-    email: homer@simpson.com
-    password: secret
-    friendships:
-                - friend1
-                - friend2 
-                - friend3
-                - friend4 
-
-User(marge):
-    firstName: Marge
-    lastName: Simpson
-    age: 34
-    nationality: American
-    email: marge@simpson.com
-    password: secret
-    friendships:
-                - friend5
-                - friend6 
-                - friend7
-                - friend8 
-    
-User(lisa):
-    firstName: Lisa
-    lastName: Simpson
-    age: 8
-    nationality: American 
-    email: lisa@simpson.com
-    password: secret
-    friendships:
-                - friend9
-                - friend10
