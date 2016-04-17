@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Public Blog' /}
+
+<div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook : ${currentUser.firstName} ${currentUser.lastName}
+			</a>
+		  </div>
+		  <div class="right menu">
+		 	 <a class="ui item active border" href="/publicprofile/${user.id}">Public Profile</a>
+  		     <a class="ui item active border" href="/home">Home</a>
+  	   	  </div>
+		</nav> 
+	  </div>    
+
+    <div class="ui center aligned top aligned padded grid">
+    
+	  <div class="nine wide column">
+	    <div class="row">
+	      <div class="ui header">${user.firstName} ${user.lastName}'s</div>
+	      #{include "components/displayposts.html" /}  
+	    </div>
+	  </div>
+	  
+   </div>

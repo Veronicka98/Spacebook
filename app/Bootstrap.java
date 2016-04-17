@@ -14,18 +14,19 @@ import play.db.jpa.Blob;
 @OnApplicationStart
 public class Bootstrap extends Job 
 { 
-  public void doJob() //throws FileNotFoundException
+  public void doJob() //throws FileNotFoundException 
   {
     if (User.count() == 0)
     {
       Fixtures.loadModels("data.yml"); 
       
-      //String photoName = "homer.gif";
-      //Blob blob = new Blob ();
-      //blob.set(new FileInputStream(photoName), MimeTypes.getContentType(photoName));
-      //User homer = User.findByEmail("homer@simpson.com");
-      //homer.profilePicture = blob;
-      //homer.save();
+      
+      /*String photoName = "20070875-webapp/public/images/marge.gif";
+      Blob blob = new Blob ();
+      blob.set(new FileInputStream(photoName), MimeTypes.getContentType(photoName));
+      User homer = User.findByEmail("marge@simpson.com");
+      homer.profilePicture = blob;
+      homer.save();*/
     }
   }
 }

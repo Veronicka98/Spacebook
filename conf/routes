@@ -39,6 +39,10 @@ POST    /editprofile/change                     EditProfile.change
 GET     /publicprofile/{id}                     PublicProfile.visit
 POST    /publicprofile/sendmessage/{id}         PublicProfile.sendMessage
 
+#Public Blog
+GET		/blog/{id}							    PublicBlog.visit
+POST    /blog/sendcomment/{id}/{postid}	        PublicBlog.sendComment
+	
 # Blog
 GET   /blog                                     Blog.index
 POST  /blog/newpost                             Blog.newPost

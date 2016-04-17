@@ -4,10 +4,15 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import java.util.List;
+
+import controllers.Accounts;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import play.db.jpa.Model;
+import play.Logger;
 import play.db.jpa.Blob;
 
 @Entity
@@ -88,5 +93,21 @@ public class User extends Model
     to.inbox.add(message);
     message.save();
   }  
+  
+  public void sendComment (User to, String commentText, Long postid)
+  {
+	User user = to;
+	Post currentPost = Post.findById(postid);
+	
+    Comment comment = new Comment (this, commentText);
+    Logger.info("on post: "+postid+" current post: "+currentPost+" to user: "+user);   
+    currentPost.comments.add(comment);
+    Logger.info("inside post.comments: "+currentPost.comments); 
+    Logger.info("inside posts "+posts);
+    user.save();
+    
+    
+  }
+  
   
 }
