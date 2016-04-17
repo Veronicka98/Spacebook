@@ -8,6 +8,7 @@ public class Comment extends Model
 {
   public String commentText;
 
+  @ManyToOne
   public User from;
 
   public Comment(User from, String commentText)

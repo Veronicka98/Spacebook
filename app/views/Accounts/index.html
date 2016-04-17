@@ -21,27 +21,28 @@
 	
 	
 		<div class="ui center aligned middle aligned padded grid">
-		  <div class="column">
+		  <div class="ten wide column">
 	  		<div class="row">
 	  	  		<div class="header welcome">Welcome to Spacebook.</div>
 	  		</div>
 	  		<div class="row">
 	  	    	<div class="header" style="color:rgba(255, 255, 255, 0.8);">A social networking app that helps you stay connected.</div>
 	  	    </div>
+	  	    <div class="row" style="padding-top: 10px;">
+	  		
+             <div class="menu">
+             <div class="header">Public Blogs:</div>
+	             #{list items:users, as:'user'}
+		            #{if user.posts.size() > 0}
+		             	 <div><a href="/blog/${user.id}">${user.firstName} ${user.lastName}</a></div>
+		             #{/if}
+	             #{/list}
+             </div>
+            
+	  		</div>
+	  		
 	  	  </div>
     	</div>
     
-        <div class="ui bottom fixed secondary menu" style="background-color:rgba(255, 255, 255, 0.8);">
-  		  <div class="ui center aligned middle aligned padded grid">
-  		    <div class="two wide column padding">
-  		      <a class="item size">Features</a>
-  		    </div>
-  		    <div class="two wide column padding">
- 		      <a class="item size">Privacy Policy</a>
- 		    </div>
- 		    <div class="two wide column padding">
-  		      <a class="item size">Customer Support</a>
-  		    </div>
-  		  </div>
-		</div>
+        #{include "components/footer.html" /}
 </div>

@@ -54,3 +54,14 @@ div.row.top {
 	border: solid black 1px;
 	margin-bottom: 15px;
 }
+
+div.menu a {
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif;
+    color:white;
+}
+
+.header {
+	color:white;
+	font-size:12px;
+}

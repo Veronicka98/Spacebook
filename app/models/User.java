@@ -102,6 +102,7 @@ public class User extends Model
     Comment comment = new Comment (this, commentText);
     Logger.info("on post: "+postid+" current post: "+currentPost+" to user: "+user);   
     currentPost.comments.add(comment);
+    comment.save();
     Logger.info("inside post.comments: "+currentPost.comments); 
     Logger.info("inside posts "+posts);
     user.save();

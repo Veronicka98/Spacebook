@@ -9,13 +9,13 @@ import models.*;
 
 public class PublicBlog extends Controller
 {
+	int index = 0;
+	
   public static void visit(Long id)
   {
-    User currentUser = Accounts.getLoggedInUser();
-    
     User user = User.findById(id);
     Logger.info("Just visiting the page for " + user.firstName + ' ' + user.lastName);
-    render(currentUser,user);
+    render(user);
   }
 
   public static void sendComment(Long id, String commentText, Long postid)

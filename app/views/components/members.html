@@ -4,30 +4,37 @@
         <div class="one wide column">
           ON
         </div>
-        <div class="six wide column">
+        <div class="three wide column">
+          PROFILE | BLOG
+        </div>
+        <div class="four wide column">
           NAME
         </div>
         <div class="five wide column">
           STATUS
         </div>
-        <div class="three wide column">
+        <div class="two wide column">
           FOLLOW
         </div>
       </div>
     #{list items:users, as:'user'}
         <div class="row">
         <div class="one wide column">
-              #{if user.logged_in == true}
-              	<i class="green circle icon"></i>
-              #{/if}
-            </div>
-        <div class="six wide column">
+          #{if user.logged_in == true}
+          	<i class="green circle icon"></i>
+          #{/if}
+        </div>
+        <div class="three wide column">
+        <a href="/publicprofile/${user.id}">Profile |</a>
+        <a href="/blog/${user.id}"> Blog</a>
+        </div>
+        <div class="four wide column">
           ${user.firstName} ${user.lastName}
         </div>
         <div class="five wide column">
           ${user.statusText}
         </div>
-        <div class="three wide column">
+        <div class="two wide column">
           <a href="/members/follow/${user.id}"><i class="plus square outline icon"></i></a>
         </div>
         </div>
