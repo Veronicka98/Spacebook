@@ -12,9 +12,9 @@ public class Comment extends Model
   @ManyToOne
   public User from;
 
-  public Comment(User from, String commentText, Long postid)
+  public Comment(User fromC, String commentText, Long postid)
   {
-    this.from = from;
+    this.from = fromC;
     this.commentText = commentText;
     this.postid = postid;
   }

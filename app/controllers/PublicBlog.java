@@ -13,17 +13,10 @@ public class PublicBlog extends Controller
 	
   public static void visit(Long id)
   {
-	  if(session.get("logged_in_userid") == null) {
 		  User user = User.findById(id);
 		    Logger.info("Just visiting the page for " + user.firstName + ' ' + user.lastName);
 		    render(user);
-	  } else {
-		  String currentUserId = session.get("logged_in_userid"); 
-		  User currentUser = User.findById(Long.parseLong(currentUserId));
-		  User user = User.findById(id);
-		    Logger.info("Just visiting the page for " + user.firstName + ' ' + user.lastName);
-		    render(user,currentUser);
-	  }
+	  
 
   }
 

@@ -15,25 +15,20 @@ import play.db.jpa.Model;
 public class Post extends Model
 {
   public String title;
-  @Lob
+  @Lob()
   public String content;
   
-  @OneToMany
+  @ManyToOne()
+  public User author;
+  
+  @OneToMany(mappedBy = "postid")
   public List<Comment> comments = new ArrayList<Comment>();
 
-  public Post(String title, String content)
+  public Post(User author, String title, String content)
   {
+	this.author = author;
     this.title = title;
     this.content = content;
   }
-
-  public Post() {
-	  
-  }
-
-  
-  
- 
-
   
 }

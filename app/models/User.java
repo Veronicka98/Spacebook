@@ -38,7 +38,7 @@ public class User extends Model
   @OneToMany(mappedBy = "from")
   public List<Message> outbox = new ArrayList<Message>();
   
-  @OneToMany
+  @OneToMany(mappedBy = "author")
   public List<Post> posts = new ArrayList<Post>(); 
   
   public User(String firstName, String lastName, String email, String password, int age, String nationality)

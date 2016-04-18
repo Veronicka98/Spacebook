@@ -151,3 +151,73 @@ Friendship(friend10):
     sourceUser: lisa
     targetUser: maggie
     
+Post(1):
+    author: homer
+    title: 'Hello'
+    content: 'Suspendisse quis luctus augue. Cras fermentum id enim in dictum. Nunc nec lacus sit amet dolor eleifend euismod et imperdiet tellus. Fusce volutpat dui vel quam tincidunt, eget bibendum justo ullamcorper. Aliquam ac iaculis metus. Vivamus dolor ligula, blandit ac posuere sed, malesuada et libero. Nam ornare enim a efficitur euismod.'
+
+Post(2):
+    author: homer
+    title: 'Lorem Ipsum'
+    content: 'Phasellus sem leo, varius non semper ultrices, accumsan vel erat. Mauris nibh lorem, efficitur a ultricies ut, suscipit vitae mauris. Nullam interdum ante nec nunc aliquet, vitae ultricies lacus dictum. Proin ut nunc mattis, hendrerit ante in, bibendum nisi. In sit amet leo id velit efficitur aliquam. Pellentesque eu odio orci. Cras cursus condimentum nisl at ultricies. In hac habitasse platea dictumst. Nunc in magna non eros sollicitudin sagittis id in turpis. Fusce fermentum mauris id mollis pretium. Morbi varius sit amet risus ac finibus. Nullam cursus massa consectetur, condimentum metus id, lobortis ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus a venenatis nisl.'
+
+Post(3):
+    author: marge
+    title: 'Post #1'
+    content: 'Suspendisse quis luctus augue. Cras fermentum id enim in dictum. Nunc nec lacus sit amet dolor eleifend euismod et imperdiet tellus. Fusce volutpat dui vel quam tincidunt, eget bibendum justo ullamcorper. Aliquam ac iaculis metus. Vivamus dolor ligula, blandit ac posuere sed, malesuada et libero. Nam ornare enim a efficitur euismod.'
+
+Post(4):
+    author: marge
+    title: 'Lorem Ipsum'
+    content: 'Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль. Aenean tempus, tortor quis bibendum varius, dolor tortor porta neque, sed dapibus enim est vel sem. Aliquam tincidunt pretium nisi non efficitur.'
+    
+Post(5):
+    author: marge
+    title: 'Suspendisse quis luctus augue.'
+    content: 'Cras semper pharetra blandit. Ut vel eros porta, euismod arcu vitae, rhoncus nisi.'
+
+Post(6):
+    author: lisa
+    title: 'Suspendisse quis luctus augue.'
+    content: 'Quisque fermentum, dolor a dapibus viverra, dolor arcu vulputate diam, sit amet pulvinar mauris sapien sed risus. Suspendisse pellentesque eget elit non vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante i'
+
+
+Comment(1):
+    from: homer
+    commentText: 'my first post!!! Please comment to tell me what you think'
+    postid: 1
+    
+Comment(2):
+    from: marge
+    commentText: 'great post!'
+    postid: 2
+    
+Comment(3):
+    from: bart
+    commentText: 'love this!'
+    postid: 2
+    
+Comment(4):
+    from: homer
+    commentText: 'Great post Marge!'
+    postid: 3
+
+Comment(5):
+    from: ned
+    commentText: 'Love this quote! So inspiring'
+    postid: 4
+    
+Comment(6):
+    from: bart
+    commentText: 'booooooo'
+    postid: 6
+    
+Comment(6):
+    from: marge
+    commentText: 'Great post sweetie!'
+    postid: 6
+    
+Comment(7):
+    from: homer
+    commentText: 'love this post'
+    postid: 5

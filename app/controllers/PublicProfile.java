@@ -11,8 +11,6 @@ public class PublicProfile extends Controller
 {
   public static void visit(Long id)
   {
-    User currentUser = Accounts.getLoggedInUser();
-    
     User user = User.findById(id);
     Logger.info("Just visiting the page for " + user.firstName + ' ' + user.lastName);
     render(user);

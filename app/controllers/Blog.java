@@ -20,7 +20,7 @@ public class Blog  extends Controller
   {
     User user = Accounts.getLoggedInUser();
     
-    Post post = new Post (title, content);
+    Post post = new Post (user,title, content);
     post.save();
     user.posts.add(post);
     user.save();
