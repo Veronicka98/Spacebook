@@ -18,36 +18,19 @@ public class Post extends Model
   @Lob
   public String content;
   
-  public ArrayList<Comment> comments;
+  @OneToMany
+  public List<Comment> comments = new ArrayList<Comment>();
 
   public Post(String title, String content)
   {
     this.title = title;
     this.content = content;
-    comments = new ArrayList<Comment>();
   }
 
   public Post() {
 	  
   }
-  
-  public void addComment(Comment comment) {
-	  Logger.info("Coment:"+comment.commentText+" from: "+comment.from);    
-  	comments.add(comment);
-  }
-  
-  public ArrayList<Comment> getComments() {
-	  	return comments;
-	  }
-  public String toString() {
-	  String str = "";
-	  int index = 0;
-	  for(Comment comment: comments) {
-		  str = str + " ("+index +" comment) "+ comment.commentText + "   "; 
-	  }
-	  str = str + "\n";
-	  return str;
-  }
+
   
   
  

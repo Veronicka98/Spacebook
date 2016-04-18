@@ -1,4 +1,4 @@
-  <div class="ui header">Published Posts</div>
+<div class="ui header">Published Posts</div>
   
   #{list items:user.posts.reverse(), as:'post'}
   
@@ -15,8 +15,8 @@
 		   <div class="eight wide column">
 		   
 		   <div class="ui center aligned middle aligned padded grid">
-	          #{list items:post.comments, as:'comment'}
-	           
+	          #{list items:user.comments, as:'comment'}
+	           #{if comment.postid == post.id}
 	           
 	           
 	           
@@ -25,21 +25,19 @@
 	                ${comment.from.firstName}
 	              </div>
 	              <div class="eight wide column">
-	              <p>
 	                ${comment.commentText}
-	              </p>
 	              </div>
 	              </div>
 	          
 	              
-	            
+	            #{/if}
 	          #{/list}
 	        </div>
 	          </div>
 	          
 	          <div class="eight wide column">
 	           
-		      <form action="/blog/sendcomment/${user.id}/${post.id}" method="POST">
+		      <form action="/blog/sendcomment2/${user.id}/${post.id}" method="POST">
 			    <div class="field">   
 			      <textarea name="commentText" placeholder="Comment"></textarea>
 			    </div>
@@ -47,7 +45,6 @@
 			  </form>
 			  </div>
           </div>
-          
           
 	    </div>
 	  </div>

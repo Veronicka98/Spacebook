@@ -5,6 +5,7 @@ User(homer):
     nationality: American
     email: homer@simpson.com
     password: secret
+    statusText: 'Hello everybody'
 
 User(marge):
     firstName: Marge
@@ -13,6 +14,7 @@ User(marge):
     nationality: American
     email: marge@simpson.com
     password: secret
+    statusText: 'Im just sooo tired today'
     
 User(bart):
     firstName: Bart	
@@ -21,6 +23,7 @@ User(bart):
     nationality: American
     email: bart@simpson.com
     password: secret
+    statusText: 'i like turtles'
     
 User(lisa):
     firstName: Lisa
@@ -29,6 +32,7 @@ User(lisa):
     nationality: American 
     email: lisa@simpson.com
     password: secret
+    statusText: 'cool'
     
 User(maggie):
     firstName: Maggie
@@ -37,6 +41,7 @@ User(maggie):
     nationality: American
     email: maggie@simpson.com
     password: secret
+    statusText: 'blah blah'
     
 User(ned):
     firstName: Ned
@@ -45,6 +50,7 @@ User(ned):
     nationality: American
     email: ned@flanders.com
     password: secret
+    statusText: 'idk'
     
 User(milhouse):
     firstName: Milhouse 
@@ -52,7 +58,8 @@ User(milhouse):
     age: 12
     nationality: American 
     email: milhouse@vanhouten.com
-    password: secret 
+    password: secret
+    statusText: 'lol' 
    
 User(moe):
     firstName: Moe 
@@ -61,6 +68,7 @@ User(moe):
     nationality: American 
     email: moe@slyslak.com
     password: secret 
+    statusText: 'Hello'
     
 
 Message(message1):

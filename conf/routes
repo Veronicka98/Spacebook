@@ -42,6 +42,7 @@ POST    /publicprofile/sendmessage/{id}         PublicProfile.sendMessage
 #Public Blog
 GET		/blog/{id}							    PublicBlog.visit
 POST    /blog/sendcomment/{id}/{postid}	        PublicBlog.sendComment
+POST    /blog/sendcomment2/{id}/{postid}	    PublicBlog.sendComment2
 	
 # Blog
 GET   /blog                                     Blog.index

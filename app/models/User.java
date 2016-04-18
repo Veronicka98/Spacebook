@@ -39,8 +39,7 @@ public class User extends Model
   public List<Message> outbox = new ArrayList<Message>();
   
   @OneToMany
-  public List<Post> posts = new ArrayList<Post>();
-  
+  public List<Post> posts = new ArrayList<Post>(); 
   
   public User(String firstName, String lastName, String email, String password, int age, String nationality)
   {
@@ -97,15 +96,12 @@ public class User extends Model
   public void sendComment (User to, String commentText, Long postid)
   {
 	User user = to;
-	Post currentPost = Post.findById(postid);
+	Post post = Post.findById(postid);
 	
-    Comment comment = new Comment (this, commentText);
-    Logger.info("on post: "+postid+" current post: "+currentPost+" to user: "+user);   
-    currentPost.comments.add(comment);
+    Comment comment = new Comment (this, commentText, postid);
+    post.comments.add(comment);
     comment.save();
-    Logger.info("inside post.comments: "+currentPost.comments); 
-    Logger.info("inside posts "+posts);
-    user.save();
+    Logger.info("on post: "+postid+" to user: "+user);
     
     
   }
