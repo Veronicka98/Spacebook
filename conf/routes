@@ -46,7 +46,10 @@ POST    /blog/sendcomment2/{id}/{postid}	    PublicBlog.sendComment2
 	
 # Blog
 GET   /blog                                     Blog.index
+GET	  /blog/post/{postid}					    Blog.posts
 POST  /blog/newpost                             Blog.newPost
+POST   /blog/deletepost/{postid}				Blog.deletePost
+POST   /blog/deletecomment/{commentid}/{postid} Blog.deleteComment
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

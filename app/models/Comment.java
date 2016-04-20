@@ -8,18 +8,18 @@ public class Comment extends Model
 {
   public String commentText;
   public Long postid;
+  public String date;
 
   @ManyToOne
   public User from;
 
-  public Comment(User fromC, String commentText, Long postid)
+  public Comment(User from, String commentText, Long postid, String date)
   {
-    this.from = fromC;
+    this.from = from;
     this.commentText = commentText;
     this.postid = postid;
+    this.date = date;
   }
   
-  public String toString() {
-	  return commentText +" from "+ from;
-  }
+  
 }

@@ -26,9 +26,18 @@
       #{include "components/createpost.html" /} 
     </div>
   </div>
-  <div class="nine wide column">
+  <div class="four wide column">
     <div class="row">
-      #{include "components/displayposts.html" /}  
+    
+        <div class="ui header">Published Posts</div>
+  
+  #{list items:user.posts.reverse(), as:'post'}
+    <div class="ui fluid card">
+	  <div class="content">
+	    <div class="header"><a href="/blog/post/${post.id}">${post.title}</a></div>
+	  </div>
+	</div>
+  #{/list}  
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 package controllers;
+import java.util.Date;
 
 import play.*;
 import play.mvc.*;
@@ -23,7 +24,8 @@ public class PublicBlog extends Controller
   public static void sendComment(Long id, String commentText, Long postid)
   {
     User fromUser = Accounts.getLoggedInUser();
-    if(fromUser != null) {
+    Date date = new Date();
+    String date2 = date.toString();
     	User toUser = User.findById(id);
         
         Logger.info("Comment from user " + 
@@ -31,16 +33,16 @@ public class PublicBlog extends Controller
             toUser.firstName + ' ' + toUser.lastName +": " +
             commentText);    
         
-        fromUser.sendComment(toUser, commentText, postid);
-        Blog.index();	
-    } else {
-    	Blog.index();
-    }
+        fromUser.sendComment(toUser, commentText, postid, date2 );
+        Blog.posts(postid);	
+    
     
   }  
   public static void sendComment2(Long id, String commentText, Long postid)
   {
 	  User fromUser = Accounts.getLoggedInUser();
+	  Date date = new Date();
+	  String date2 = date.toString();
 	    if(fromUser != null) {
 	    	User toUser = User.findById(id);
 	        
@@ -49,7 +51,7 @@ public class PublicBlog extends Controller
 	            toUser.firstName + ' ' + toUser.lastName +": " +
 	            commentText);    
 	        
-	        fromUser.sendComment(toUser, commentText, postid);
+	        fromUser.sendComment(toUser, commentText, postid, date2);
 	        PublicBlog.visit(id);	
 	    } else {
 	    	PublicBlog.visit(id);

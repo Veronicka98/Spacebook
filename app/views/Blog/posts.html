@@ -1,0 +1,87 @@
+#{extends 'main.html' /}
+#{set title:'Blog' /}
+
+<div class="ui segment" style="background-color:black;">
+		<nav class="ui inverted secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  <i class="white circle notched icon"></i> 
+			  Spacebook : ${user.firstName} ${user.lastName}
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a>  
+  			<a class="ui item active border" href="/blog">Blog</a>
+  			<a class="ui item" href="/editprofile">Account Settings</a>  
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div>
+	 
+<div class="ui center aligned top aligned padded grid">
+  <div class="twelve wide column">
+    <div class="row">
+    <div class="ui fluid card">
+	  <div class="content">
+	    <div class="header">${post.title}</div>
+	    <div class="description">
+	      ${post.content}
+	      
+	      <div class="ui divider"></div>
+	      
+	      <div class="ui center aligned top aligned padded grid">
+		   
+		   <div class="ten wide column">
+		   <div class="ui small header">Comments</div>
+		   <div class="ui center aligned middle aligned padded grid">
+		   
+	          #{list items:post.comments, as:'comment'}
+	              <div class="row">
+	              <div class="three wide column">
+	                ${comment.from.firstName}
+	              </div>
+	              <div class="seven wide column">
+	                
+	                  ${comment.commentText}
+	              
+	              </div>
+	              <div class="six wide column">
+	                
+	                  ${comment.date}
+	              
+		      
+	              </div>
+	              </div>
+	          #{/list}
+	        </div>
+	          </div>
+	          
+	          <div class="six wide column">
+	           <div class="ui small header">Leave a comment</div>
+		      <form action="/blog/sendcomment/${user.id}/${post.id}" method="POST">
+			    <div class="field">   
+			      <textarea name="commentText" placeholder="Comment"></textarea>
+			    </div>
+			    <button class="ui button">Send</button>
+			  </form>
+			 
+			  </div>
+          </div>
+          
+          
+	    </div>
+	  </div>
+	</div>
+
+    </div>
+  </div>
+  <div class="one wide column">
+    <div class="twelve wide column">
+      <form action="/blog/deletepost/${post.id}" method="POST">
+         <input class="ui button" type="submit" name="submit" value="Delete Post" />
+      </form>
+    </div>
+  </div>
+</div>

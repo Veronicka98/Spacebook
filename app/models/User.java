@@ -1,4 +1,5 @@
 package models;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -93,12 +94,12 @@ public class User extends Model
     message.save();
   }  
   
-  public void sendComment (User to, String commentText, Long postid)
+  public void sendComment (User to, String commentText, Long postid, String date)
   {
 	User user = to;
 	Post post = Post.findById(postid);
 	
-    Comment comment = new Comment (this, commentText, postid);
+    Comment comment = new Comment (this, commentText, postid, date);
     post.comments.add(comment);
     comment.save();
     Logger.info("on post: "+postid+" to user: "+user);

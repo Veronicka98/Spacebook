@@ -18,59 +18,10 @@
 
     <div class="ui center aligned top aligned padded grid">
     
-	  <div class="nine wide column">
+	  <div class="twelve wide column">
 	    <div class="row">
 	      <div class="ui header">${user.firstName} ${user.lastName}'s</div>
-	      <div class="ui header">Published Posts</div>
-  
-  #{list items:user.posts.reverse(), as:'post'}
-  
-    <div class="ui fluid card">
-	  <div class="content">
-	    <div class="header">${post.title}</div>
-	    <div class="description">
-	      ${post.content}
-	      
-	      <div class="ui divider"></div>
-	      
-	      <div class="ui center aligned middle aligned padded grid">
-		   
-		   <div class="eight wide column">
-		   
-		   <div class="ui center aligned middle aligned padded grid">
-	          #{list items:post.comments, as:'comment'}
-	           
-	           
-	           
-	              <div class="row">
-	              <div class="eight wide column">
-	                ${comment.from.firstName}
-	              </div>
-	              <div class="eight wide column">
-	                ${comment.commentText}
-	              </div>
-	              </div>
-	          
-	              
-	          #{/list}
-	        </div>
-	          </div>
-	          
-	          <div class="eight wide column">
-	           
-		      <form action="/blog/sendcomment2/${user.id}/${post.id}" method="POST">
-			    <div class="field">   
-			      <textarea name="commentText" placeholder="Comment"></textarea>
-			    </div>
-			    <button  class="ui button">Send</button>
-			  </form>
-			  </div>
-          </div>
-          
-	    </div>
-	  </div>
-	</div>
-  #{/list} 
+	      #{include "components/displayposts2.html" /}  
 	    </div>
 	  </div>
 	  
