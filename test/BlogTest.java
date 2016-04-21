@@ -38,9 +38,9 @@ public class BlogTest extends UnitTest
   @After
   public void teardown()
   {
-    bob.delete();
     post1.delete();
     post2.delete();
+    bob.delete();
   }
 
   @Test

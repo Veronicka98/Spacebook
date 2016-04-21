@@ -42,8 +42,6 @@ public class Blog  extends Controller
   public static void deletePost(Long postid) {
 	  
 	    User user = Accounts.getLoggedInUser();
-	    	Logger.info(user.toString());
-	    	Logger.info(user.posts.toString());
 	    Post post = Post.findById(postid);
 	    if(post.comments.size() > 0) {
 	    for(int i = post.comments.size() - 1 ; i >= 0 ;i--) {
@@ -51,18 +49,12 @@ public class Blog  extends Controller
 	    	post.comments.remove(comment);
 	  	    comment.delete();
 	  	    user.save();
-	  	  Logger.info(post.comments.toString());
 	    }
 	    }
 	    if(post.comments.size() == 0) {
-	        Logger.info(post.toString());
 		    user.posts.remove(post);
 			post.delete();	
-		    
-		    user.save();
-		    	Logger.info(user.posts.toString());
-		    	Logger.info("Post deleted");
-		    
+		    user.save();		    
 	    }
 	    index();
 		

@@ -99,7 +99,7 @@ public class User extends Model
 	User user = to;
 	Post post = Post.findById(postid);
 	
-    Comment comment = new Comment (this, commentText, postid, date);
+    Comment comment = new Comment (this, commentText,postid, date);
     post.comments.add(comment);
     comment.save();
     Logger.info("on post: "+postid+" to user: "+user);
