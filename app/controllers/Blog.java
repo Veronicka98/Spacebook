@@ -59,4 +59,17 @@ public class Blog  extends Controller
 	    index();
 		
   }
+  
+  public static void deleteComment(Long postid, Long commentid) {
+	  	
+	    User user = Accounts.getLoggedInUser();
+	    Post post = Post.findById(postid);
+	    
+    	Comment comment = Comment.findById(commentid);
+    	post.comments.remove(comment);
+  	    comment.delete();
+  	    user.save();
+	  	
+	    posts(postid);
+  }
 }

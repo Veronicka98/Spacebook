@@ -33,32 +33,32 @@
 	      
 	      <div class="ui center aligned top aligned padded grid">
 		   
-		   <div class="ten wide column">
+		   <div class="twelve wide column">
 		   <div class="ui small header">Comments</div>
 		   <div class="ui center aligned middle aligned padded grid">
 		   
 	          #{list items:post.comments, as:'comment'}
 	              <div class="row">
-	              <div class="three wide column">
-	                ${comment.from.firstName}
-	              </div>
-	              <div class="seven wide column">
-	                
-	                  ${comment.commentText}
-	              
-	              </div>
-	              <div class="six wide column">
-	                
-	                  ${comment.date}
-	              
-		      
-	              </div>
+			          <div class="three wide column">
+			          	${comment.from.firstName}
+			          </div>
+			          <div class="five wide column">
+		                  ${comment.commentText}
+		              </div>
+		              <div class="five wide column">
+		                  ${comment.date}
+		              </div>
+		              <div class="one wide column">
+		                  <form action="/blog/deletecomment/${comment.id}/${post.id}" method="POST">
+					         <input class="ui button" type="submit" name="submit" value="Delete" />
+					      </form>
+		              </div>
 	              </div>
 	          #{/list}
 	        </div>
 	          </div>
 	          
-	          <div class="six wide column">
+	          <div class="four wide column">
 	           <div class="ui small header">Leave a comment</div>
 		      <form action="/blog/sendcomment/${user.id}/${post.id}" method="POST">
 			    <div class="field">   
