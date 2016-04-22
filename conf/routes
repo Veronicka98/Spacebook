@@ -50,6 +50,8 @@ GET	  /blog/post/{postid}					    Blog.posts
 POST  /blog/newpost                             Blog.newPost
 POST   /blog/deletepost/{postid}				Blog.deletePost
 POST   /blog/deletecomment/{commentid}/{postid} Blog.deleteComment
+POST	/blog/editpost/{postid}					Blog.editpost
+POST	/editpost/{postid}						Blog.editPostt
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

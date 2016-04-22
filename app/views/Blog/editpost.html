@@ -26,8 +26,20 @@
     <div class="ui fluid card">
 	  <div class="content">
 	    <div class="description">
-	    <div class="ui header">${post.title}</div>
-	      ${post.content}
+	   	   
+	    <section class="ui form segment">
+          <form action="/editpost/${post.id}" method="post">
+            <div class="field">
+              <label>Title</label>
+              <textarea name="title" style="height:15px;">${post.title}</textarea>
+            </div>
+            <div class="field">
+              <label>Content</label>
+              <textarea name="content" style="height:15px;">${post.content}</textarea>
+            </div>
+            <input class="ui blue button" type="submit" name="submit" value="Save" />
+          </form>
+         </section>
 	      
 	      <div class="ui divider"></div>
 	      

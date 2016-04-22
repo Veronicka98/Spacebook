@@ -14,7 +14,6 @@ public class Blog  extends Controller
   public static void index()
   {
     User user = Accounts.getLoggedInUser();
-    Logger.info(user.posts.toString());
     render(user);
     
   }
@@ -26,6 +25,12 @@ public class Blog  extends Controller
     render(post,user);
   }
   
+  public static void editpost(Long postid) {
+	  Post post = Post.findById(postid);
+	  User user = Accounts.getLoggedInUser();
+	  render(post,user);
+  }
+  
   public static void newPost(String title, String content)
   {
     User user = Accounts.getLoggedInUser();
@@ -35,7 +40,6 @@ public class Blog  extends Controller
     user.posts.add(post);
     user.save();
     
-    Logger.info ("title:" + title + " content:" + content);
     index();
   }
   
@@ -71,5 +75,18 @@ public class Blog  extends Controller
   	    user.save();
 	  	
 	    posts(postid);
+  }
+  
+  public static void editPostt(Long postid, String content,String title) {
+	  
+	    User user = Accounts.getLoggedInUser();
+	    Post post = Post.findById(postid);
+	    
+	    post.title = title;
+	    post.content = content;
+	    post.save();
+	    user.save();
+	    posts(postid);
+	    
   }
 }
