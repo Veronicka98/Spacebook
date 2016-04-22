@@ -92,8 +92,13 @@ public class CommentTest extends UnitTest
     
     Comment comment1 = post2.comments.get(0);
     assertEquals(comment1.commentText, "Hi there - how are you");
+    assertEquals(comment1.from,mary);
+    assertEquals(comment1.postid,post2.id);
+    
     Comment comment2 = post2.comments.get(1);
     assertEquals(comment2.commentText, "Where are you now?");
+    assertEquals(comment2.from,mary);
+    assertEquals(comment2.postid,post2.id);
 
     comment1.delete();
     post2.comments.remove(comment1);
