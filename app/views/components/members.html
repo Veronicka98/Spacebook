@@ -2,7 +2,7 @@
     <div class="ui center aligned middle aligned padded grid">
       <div class="row top">
         <div class="one wide column">
-          ON
+          ON/OFF
         </div>
         <div class="three wide column">
           PROFILE | BLOG
@@ -23,13 +23,30 @@
           #{if user.logged_in == true}
           	<i class="green circle icon"></i>
           #{/if}
+          #{else}
+    		<i class="red circle icon"></i>
+		  #{/else}
         </div>
         <div class="three wide column">
         <a href="/publicprofile/${user.id}">Profile |</a>
         <a href="/blog/${user.id}">Blog</a>
         </div>
         <div class="four wide column">
-          ${user.firstName} ${user.lastName}
+        <div class="ui simple dropdown item">
+		    <i class="fa fa-users"></i> 
+		      <a href="/publicprofile/${user.id}"> ${user.firstName} ${user.lastName} </a>
+		    <i class="fa fa-caret-down"></i>
+		    <div class="menu">
+		        <div class="item">
+		        <div class="ui card">
+				  <div class="image">
+				    <img class="ui image" src="/profile/getpicture/${user.id}">
+				  </div>
+			     </div>
+			    </div>
+		    </div>
+		</div>
+          
         </div>
         <div class="five wide column">
           ${user.statusText}

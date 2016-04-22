@@ -11,7 +11,20 @@
           #{list items:user.friendships, as:'friendship'}
           <div class="row">
             <div class="seven wide column">
-              <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName}</a>
+             <div class="ui simple dropdown item">
+				    <i class="fa fa-users"></i> 
+				      <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName}</a>
+				    <i class="fa fa-caret-down"></i>
+				    <div class="menu">
+				        <div class="item">
+				        <div class="ui card">
+						  <div class="image">
+						    <img class="ui image" src="/profile/getpicture/${friendship.targetUser.id}">
+						  </div>
+					     </div>
+					    </div>
+				    </div>
+				</div>
             </div>
             <div class="five wide column">
               <a href="/home/drop/${friendship.targetUser.id}"><i class="minus square outline icon"></i></a>
@@ -19,3 +32,5 @@
            </div>
           #{/list}
         </div>
+        
+                

@@ -5,16 +5,39 @@ import play.mvc.*;
 import java.util.*;
 import models.*;
 
-public class Accounts extends Controller
-{
-  public static void signup()
+public class Accounts extends Controller {
+	
+public static void signup()
   {
-    render();
+	 
+	    if (session.contains("logged_in_userid"))
+	    {
+	    	User user = Accounts.getLoggedInUser();
+	    	user.logged_in = false;
+	        user.save();
+	        session.clear();
+	        render();
+	    }
+	    else
+	    {
+	      render();
+	    }
   }
 
-  public static void login()
+public static void login()
   {
-    render();
+	    if (session.contains("logged_in_userid"))
+	    {
+	    	User user = Accounts.getLoggedInUser();
+	    	user.logged_in = false;
+	        user.save();
+	        session.clear();
+	        render();
+	    }
+	    else
+	    {
+	      render();
+	    }
   }
 
   public static void logout()
@@ -26,10 +49,23 @@ public class Accounts extends Controller
     index();
   }
 
-  public static void index()
+public static void index()
   {
-	List<User> users = User.findAll();
-    render(users);
+	
+	    if (session.contains("logged_in_userid"))
+	    {
+	    	User user = getLoggedInUser();
+	    	user.logged_in = false;
+	        user.save();
+	        session.clear();
+	        List<User> users = User.findAll();
+	        render(users);
+	    }
+	    else
+	    {
+	    	List<User> users = User.findAll();
+	        render(users);
+	    }
   }
 
   public static User getLoggedInUser()
