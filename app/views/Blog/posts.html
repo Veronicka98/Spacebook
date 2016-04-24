@@ -22,6 +22,7 @@
 	 
 <div class="ui center aligned top aligned padded grid">
   <div class="twelve wide column">
+  
     <div class="row">
     <div class="ui fluid card">
 	  <div class="content">
@@ -48,26 +49,29 @@
 		              <div class="five wide column">
 		                  ${comment.date}
 		              </div>
-		              <div class="one wide column">
+		              <div class="three wide column">
 		                  <form action="/blog/deletecomment/${comment.id}/${post.id}" method="POST">
-					         <input class="ui button" type="submit" name="submit" value="Delete" />
+					         <button class="ui button">Delete</button>
 					      </form>
 		              </div>
 	              </div>
 	          #{/list}
 	        </div>
 	          </div>
+	        
 	          
 	          <div class="four wide column">
-	           <div class="ui small header">Leave a comment</div>
-		      <form action="/blog/sendcomment/${user.id}/${post.id}" method="POST">
-			    <div class="field">   
-			      <textarea name="commentText" placeholder="Comment"></textarea>
-			    </div>
-			    <button class="ui button">Send</button>
-			  </form>
-			 
+	          <div class="">
+	            <div class="ui small header">Leave a comment</div>
+		          <form action="/blog/sendcomment/${user.id}/${post.id}" method="POST">
+			        <div class="field">   
+			          <textarea name="commentText" placeholder="Comment"></textarea>
+			        </div>
+			        <button class="ui button">Send</button>
+			      </form> 
+			     </div> 
 			  </div>
+			  
           </div>
           
           
@@ -76,8 +80,11 @@
 	</div>
 
     </div>
+    
   </div>
+  
   <div class="one wide column">
+  
     <div class="row" style="padding-bottom: 10px;">
       <form action="/blog/editpost/${post.id}" method="POST">
          <input class="ui button" type="submit" name="submit" value="Edit Post" />
@@ -88,5 +95,7 @@
          <input class="ui button" type="submit" name="submit" value="Delete Post" />
       </form>
   </div>
+  
  </div>
+ 
 </div>

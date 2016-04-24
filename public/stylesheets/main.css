@@ -21,6 +21,13 @@ div.welcome {
 .ui.menu.main a.item {
     font-size: 17px;
 }
+
+.in-menu {
+	font-size: 17px;
+}
+.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
+    color: #8C8C8C;
+}
 .ui.secondary.menu > .menu > .item.border,
 .ui.secondary.menu > .item.border {
 	border: solid white 1px;

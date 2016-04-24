@@ -12,6 +12,20 @@
 			</a>
 		  </div>
 		  <div class="right menu">
+		  <div class="ui simple dropdown item" style="color:#8C8C8C;">
+			    <i class="fa fa-users"></i> 
+			      <a class="in-menu">Public Blogs</a>
+			    <i class="fa fa-caret-down"></i>
+			    <div class="menu">
+				    #{list items:users, as:'user'}
+			  		    #{if user.posts.size() > 0}
+					      <div class="item" style="color: black;">
+					        <a style="color: black;" href="/blog/${user.id}">${user.firstName} ${user.lastName}</a>
+						  </div>
+					    #{/if}
+				    #{/list}
+			    </div>
+			</div>
   		    <a class="item border" href="/signup"> Signup  </a>
   			<a class="item border" href="/login">  Login   </a>
   	   	  </div>
@@ -30,14 +44,8 @@
 	  	    </div>
 	  	    <div class="row" style="padding-top: 10px;">
 	  		
-             <div class="menu">
-             <div class="header">Public Blogs:</div>
-	             #{list items:users, as:'user'}
-		            #{if user.posts.size() > 0}
-		             	 <div><a href="/blog/${user.id}">${user.firstName} ${user.lastName}</a></div>
-		             #{/if}
-	             #{/list}
-             </div>
+	  		
+	  		
             
 	  		</div>
 	  		
