@@ -15,6 +15,7 @@ import play.db.jpa.Model;
 public class Post extends Model
 {
   public String title;
+  public String date;
   @Lob()
   public String content;
   
@@ -24,11 +25,12 @@ public class Post extends Model
   @OneToMany(mappedBy = "postid")
   public List<Comment> comments = new ArrayList<Comment>();
 
-  public Post(User author, String title, String content)
+  public Post(User author, String title, String content, String date)
   {
 	this.author = author;
     this.title = title;
     this.content = content;
+    this.date = date;
   }
   
 }

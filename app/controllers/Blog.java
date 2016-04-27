@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import models.Comment;
@@ -34,8 +35,10 @@ public class Blog  extends Controller
   public static void newPost(String title, String content)
   {
     User user = Accounts.getLoggedInUser();
+    Date date = new Date();
+	String date2 = date.toString();
     
-    Post post = new Post (user,title, content);
+    Post post = new Post (user, title, content, date2);
     post.save();
     user.posts.add(post);
     user.save();

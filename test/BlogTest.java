@@ -28,8 +28,8 @@ public class BlogTest extends UnitTest
   public void setup()
   {
     bob   = new User("bob", "jones", "bob@jones.com", "secret", 20, "irish");
-    post1 = new Post(bob,"Post Title 1", "This is the first post content");
-    post2 = new Post(bob,"Post Title 2", "This is the second post content");
+    post1 = new Post(bob,"Post Title 1", "This is the first post content","Mon Apr 18 19:26:30 BST 2016");
+    post2 = new Post(bob,"Post Title 2", "This is the second post content","Mon Apr 18 19:26:30 BST 2016");
     bob.save();
     post1.save();
     post2.save();
@@ -79,7 +79,7 @@ public class BlogTest extends UnitTest
   @Test
   public void testDeletePost()
   {
-    Post post3 = new Post(bob,"Post Title 3", "This is the third post content");
+    Post post3 = new Post(bob,"Post Title 3", "This is the third post content","Mon Apr 18 19:26:30 BST 2016");
     post3.save();
     bob.posts.add(post3);
     bob.save();
